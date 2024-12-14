@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Cards with Flip Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-front {
+            background: #fff;
+        }
+
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-back { color: #fff; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px;
+             transform: rotateY(180deg);
+             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
+
+
+        .card:nth-child(1) .card-back {
+            background-color: #3498db; /* Blue */
+        }
+
+        .card:nth-child(2) .card-back {
+            background-color: #2ecc71; /* Green */
+        }
+
+        .card:nth-child(3) .card-back {
+            background-color: #e74c3c; /* Red */
+        }
+
+        .card:nth-child(4) .card-back {
+            background-color: #9b59b6; /* Purple */
+        }
+
+        .card:nth-child(5) .card-back {
+            background-color: #f1c40f; /* Yellow */
+        }
+
+        .card:nth-child(6) .card-back {
+            background-color: #34495e; /* Dark Blue */
+        }
+
+        .card:nth-child(7) .card-back {
+            background-color: #e67e22; /* Orange */
+        }
+
+        .card:nth-child(8) .card-back {
+            background-color: #1abc9c; /* Teal */
+        }
+
+        .card:nth-child(9) .card-back {
+            background-color: #95a5a6; /* Gray */
+        }
+
+        .card:nth-child(10) .card-back {
+            background-color: #d35400; /* Dark Orange */
+        }
+
+        .card-back h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .card-back p {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Jerusalem-1712855.jpg" alt="Jerusalem">
+                    <div class="tourism-place">   <h3>Al-Aqsa Mosque</h3></div>
+                    <h3>Al-Aqsa Mosque</h3>
+                </div>
+            
+                <div class="card-back">
+                    <div>
+                        <h3>Jerusalem</h3>
+                        <p>The historic capital and cultural center of Palestine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://zamzam.com/blog/wp-content/uploads/2021/08/shutterstock_1745937893.jpg" alt="Al-Aqsa Mosque">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h3>Al-Aqsa Mosque</h3>
+                        <p>A sacred Islamic site in the Old City of Jerusalem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://cdn.britannica.com/75/262575-050-C71F1633/Bethlehem-West-Bank.jpg" alt="Bethlehem">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h3>Bethlehem</h3>
+                        <p>Known as the birthplace of Jesus Christ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://visitramallah.ramallah.ps/files/image/Ramallah/about%20ramallah/modern-ramallah.jpg" alt="Ramallah">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h3>Ramallah</h3>
+                        <p>A vibrant Palestinian city and administrative capital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Sea_of_Galilee_View.jpg" alt="Sea of Galilee">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h3>Sea of Galilee</h3>
+                        <p>A freshwater lake with historic significance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Gaza_City.JPG" alt="Gaza">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h3>Gaza</h3>
+                        <p>A coastal city with a rich history and culture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://www.travelpalestine.ps/public/files/image/destinations/nablus%20small.jpg" alt="Nablus">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h3>Nablus</h3>
+                        <p>A city known for its bustling markets and traditional soap industry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Hebron_Cave_of_the_Patriarchs.jpg/853px-Hebron_Cave_of_the_Patriarchs.jpg" alt="Hebron">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h3>Hebron</h3>
+                        <p>Home to the Tomb of the Patriarchs and a vibrant glass industry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Jenin-new.jpg" alt="Jenin">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h3>Jenin</h3>
+                        <p>A northern city with rich agricultural heritage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/%D8%A7%D9%84%D8%A8%D9%84%D8%AF%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%81%D9%8A_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%B7%D9%88%D9%84%D9%83%D8%B1%D9%852.jpg" alt="Tulkarm">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h3>Tulkarm</h3>
+                        <p>A city known for its olive groves and citrus production.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
